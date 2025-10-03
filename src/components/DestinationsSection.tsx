@@ -8,24 +8,24 @@ import islandImg from "@/assets/destination-island.jpg";
 const destinations = [
   {
     title: "Mountain Adventures",
-    location: "Swiss Alps",
+    location: "Swiss & Italian Alps",
     description: "Experience breathtaking peaks, pristine hiking trails, and charming alpine villages.",
     image: mountainsImg,
     duration: "7 Days"
   },
   {
-    title: "European Escapade",
-    location: "Prague & Vienna",
+    title: "Central Europe",
+    location: "Austria & Germany",
     description: "Immerse yourself in history, culture, and stunning architecture across Central Europe.",
     image: cityImg,
     duration: "10 Days"
   },
   {
     title: "Tropical Paradise",
-    location: "Maldives",
+    location: "Seychelles",
     description: "Discover crystal-clear waters, white sand beaches, and unforgettable sunsets.",
     image: islandImg,
-    duration: "5 Days"
+    duration: "7 Days"
   }
 ];
 
@@ -44,13 +44,13 @@ export const DestinationsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {destinations.map((destination, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="overflow-hidden group hover:shadow-2xl smooth-transition border-border"
             >
               <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={destination.image} 
+                <img
+                  src={destination.image}
                   alt={destination.title}
                   className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
                 />
@@ -69,8 +69,8 @@ export const DestinationsSection = () => {
                 <p className="text-muted-foreground mb-4">
                   {destination.description}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
                 >
                   View Itinerary
@@ -81,7 +81,7 @@ export const DestinationsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button 
+          <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition"
           >

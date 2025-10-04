@@ -6,12 +6,26 @@ import { Link } from "react-router-dom";
 export const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+        poster={heroImage}
+      >
+        <source src="/video/intro.mp4" type="video/mp4" />
+        {/* Fallback to image if video doesn't load */}
+      </video>
+      
+      {/* Fallback background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 gradient-hero-overlay" />
-      </div>
+      />
+      
+      <div className="absolute inset-0 gradient-hero-overlay" />
       
       <div className="relative z-10 flex h-full items-center justify-center px-4">
         <div className="max-w-4xl text-center">

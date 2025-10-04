@@ -1,38 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Map, Wallet, Camera, Backpack, Globe } from "lucide-react";
-
-const tips = [
-  {
-    icon: Map,
-    title: "Plan Flexibly",
-    description: "Leave room for spontaneity while having a rough itinerary"
-  },
-  {
-    icon: Wallet,
-    title: "Budget Smart",
-    description: "Use local transportation and eat where locals eat"
-  },
-  {
-    icon: Camera,
-    title: "Capture Moments",
-    description: "Balance photography with living in the present"
-  },
-  {
-    icon: Backpack,
-    title: "Pack Light",
-    description: "Bring versatile clothing and essential items only"
-  },
-  {
-    icon: Globe,
-    title: "Respect Cultures",
-    description: "Learn basic phrases and local customs before visiting"
-  },
-  {
-    icon: Lightbulb,
-    title: "Stay Connected",
-    description: "Get local SIM cards and download offline maps"
-  }
-];
+import { Link } from "react-router-dom";
+import { tips } from "../data/tips";
 
 export const TipsSection = () => {
   return (
@@ -51,22 +19,23 @@ export const TipsSection = () => {
           {tips.map((tip, index) => {
             const Icon = tip.icon;
             return (
-              <Card 
-                key={index}
-                className="group hover:shadow-lg smooth-transition border-border hover:border-primary/50"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ocean mb-4 group-hover:scale-110 smooth-transition">
-                    <Icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                    {tip.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {tip.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <Link to={`/tips/${tip.slug}`} key={index} className="group block">
+                <Card
+                  className="h-full group-hover:shadow-lg smooth-transition border-border group-hover:border-primary/50"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ocean mb-4 group-hover:scale-110 smooth-transition">
+                      <Icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-card-foreground">
+                      {tip.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {tip.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>

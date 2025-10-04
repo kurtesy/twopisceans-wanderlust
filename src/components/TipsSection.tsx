@@ -24,7 +24,7 @@ export const TipsSection = () => {
                   className="h-full group-hover:shadow-lg smooth-transition border-border group-hover:border-primary/50"
                 >
                   <CardContent className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ocean mb-4 group-hover:scale-110 smooth-transition">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-earthy mb-4 group-hover:scale-110 smooth-transition">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-card-foreground">

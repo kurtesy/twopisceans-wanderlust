@@ -50,7 +50,7 @@ const TipDetail = () => {
 
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-12">
-                            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full gradient-ocean mb-6 animate-in fade-in-0 zoom-in-50 duration-500">
+                            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full gradient-earthy mb-6 animate-in fade-in-0 zoom-in-50 duration-500">
                                 <Icon className="h-12 w-12 text-white" />
                             </div>
                             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">{tip.title}</h1>

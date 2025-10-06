@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "./runtimeConfig": "./runtimeConfig.browser",
-      "./src/main.tsx": "twopisceans-wanderlust/src/main.tsx"
+      "/src/main.tsx": "/twopisceans-wanderlust/src/main.tsx"
     },
   },
 }));

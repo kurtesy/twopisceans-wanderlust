@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Tips from "./pages/Tips";
 import TipDetail from "./pages/TipDetail";
+import ReelsPage from "./pages/Reels"; // Renamed to avoid conflict with component name
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,7 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/twopisceans-wanderlust">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/itineraries" element={<Itineraries />} />
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/tips" element={<Tips />} />
           <Route path="/tips/:slug" element={<TipDetail />} />
+          <Route path="/reels" element={<ReelsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

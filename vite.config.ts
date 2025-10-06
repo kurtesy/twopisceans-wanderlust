@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: "/twopisceans-wanderlust/",
   server: {
     host: "::",
     port: 8080,
@@ -14,6 +14,8 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "./runtimeConfig": "./runtimeConfig.browser",
+      "twopisceans-wanderlust/src/main.tsx": "./src/main.tsx"
     },
   },
 }));

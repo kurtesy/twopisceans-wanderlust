@@ -13,9 +13,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "./runtimeConfig": "./runtimeConfig.browser",
-      "/twopisceans-wanderlust/src/main.tsx": "/src/main.tsx",
+      "@": path.resolve(__dirname, "./src")
     },
   },
 }));

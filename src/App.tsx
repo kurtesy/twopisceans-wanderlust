@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Itineraries from "./pages/Itineraries";
 import Blog from "./pages/Blog";
@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Tips from "./pages/Tips";
 import TipDetail from "./pages/TipDetail";
 import ReelsPage from "./pages/Reels"; // Renamed to avoid conflict with component name
+import LinksPage from "./pages/Links";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,7 +21,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/twopisceans-wanderlust">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/itineraries" element={<Itineraries />} />
@@ -30,10 +31,11 @@ const App = () => (
           <Route path="/tips" element={<Tips />} />
           <Route path="/tips/:slug" element={<TipDetail />} />
           <Route path="/reels" element={<ReelsPage />} />
+          <Route path="/links" element={<LinksPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

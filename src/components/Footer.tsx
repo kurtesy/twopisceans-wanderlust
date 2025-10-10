@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="flex flex-col gap-4">
-            <img src={logo} alt="The Two Pisceans Logo" className="h-8 w-auto" />
+            <img src={logo} alt="The Two Pisceans Logo" className="h-8 w-20" />
             <p className="text-muted-foreground">
               Exploring the world and sharing our adventures, one destination at a time.
             </p>

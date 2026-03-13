@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | @thetwopisceans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'insta-pink': '#E1306C',
+                        'insta-purple': '#833AB4',
+                        'insta-orange': '#F56040',
+                        'dashboard-bg': '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            max-height: 350px;
+            margin: auto;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .metric-gradient {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-dashboard-bg text-slate-800 font-sans leading-normal">
+
+    <!-- Chosen Palette: Instagram Modern (Slate and White with Insta-Gradient Accents) -->
+    <!-- Application Structure Plan: 
+         The application is designed as a "Pro-Insight Dashboard" to showcase the account's viral potential.
+         1. Executive Summary Header: Key stats (Followers, Engagement) presented with high visual impact.
+         2. Content Performance Section: Using Chart.js to show the 'Engagement vs Reach' trend, highlighting the efficiency of Reels.
+         3. Audience Intelligence: A breakdown of demographics and geographic reach to prove market fit.
+         4. Viral Factor: A specific section focusing on why @thetwopisceans outperforms accounts of similar size (The 'Reel Overperformance' metric).
+         5. Actionable Insights: Automated takeaways for brands.
+    -->
+    <!-- Visualization & Content Choices:
+         1. Line Chart (Chart.js): Shows follower growth over the last 6 months. Goal: Change.
+         2. Doughnut Chart (Chart.js): Audience Age Distribution. Goal: Organize.
+         3. Horizontal Bar Chart (Chart.js): Top Locations (Cities). Goal: Compare.
+         4. Metric Cards: High-impact KPI displays. Goal: Inform.
+         NO SVG used. NO Mermaid used.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 bg-slate-900 text-slate-300 p-6 space-y-8">
+            <div>
+                <h1 class="text-white text-xl font-bold tracking-tight">INSIGHTS PRO</h1>
+                <p class="text-xs text-slate-500 uppercase font-bold mt-1 tracking-widest">@thetwopisceans</p>
+            </div>
+            <nav class="space-y-4">
+                <button onclick="switchTab('overview')"
+                    class="w-full flex items-center space-x-3 text-sm p-3 rounded-lg bg-slate-800 text-white transition-all"
+                    id="nav-overview">
+                    <span>Summary</span>
+                </button>
+                <button onclick="switchTab('audience')"
+                    class="w-full flex items-center space-x-3 text-sm p-3 rounded-lg hover:bg-slate-800 transition-all"
+                    id="nav-audience">
+                    <span>Audience</span>
+                </button>
+                <button onclick="switchTab('content')"
+                    class="w-full flex items-center space-x-3 text-sm p-3 rounded-lg hover:bg-slate-800 transition-all"
+                    id="nav-content">
+                    <span>Content</span>
+                </button>
+            </nav>
+            <div class="pt-20">
+                <div class="bg-slate-800 p-4 rounded-xl">
+                    <p class="text-[10px] uppercase font-bold text-slate-500 mb-2">Account Health</p>
+                    <div class="h-2 w-full bg-slate-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[94%]"></div>
+                    </div>
+                    <p class="text-xs mt-2 text-green-400 font-medium">94% Optimal Engagement</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 md:p-8 overflow-y-auto">
+
+            <!-- Tab: Overview -->
+            <div id="tab-overview" class="space-y-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">Performance Overview</h2>
+                        <p class="text-slate-500">Analysis of growth and reach over the past 6 months.</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">HISTORICAL
+                            DATA</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">AUG 2025 -
+                            JAN 2026</span>
+                    </div>
+                </div>
+
+                <!-- KPI Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 rounded-2xl shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Followers</p>
+                        <h3 class="text-3xl font-bold mt-1">41,200</h3>
+                        <div class="text-green-500 text-xs font-bold mt-2">+26.7% over 6 months</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Total Reach</p>
+                        <h3 class="text-3xl font-bold mt-1">315,000</h3>
+                        <div class="text-green-500 text-xs font-bold mt-2">Steady upward trend</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl shadow-sm">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Avg. Eng. Rate</p>
+                        <h3 class="text-3xl font-bold mt-1">4.8%</h3>
+                        <div class="text-slate-500 text-xs mt-2">Consistent performance</div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-insta-pink">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Viral Score</p>
+                        <h3 class="text-3xl font-bold mt-1 metric-gradient">High</h3>
+                        <div class="text-slate-500 text-xs mt-2">8 viral Reels in 6 months</div>
+                    </div>
+                </div>
+
+                <!-- Main Chart Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 glass-card p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold mb-6 flex justify-between items-center">
+                            6-Month Follower Growth
+                            <span class="text-xs font-normal text-slate-400">Monthly Aggregates</span>
+                        </h4>
+                        <div class="chart-container">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold mb-2">Long-term Insight</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Over the past 6 months, your <strong>discovery rate</strong> has scaled alongside your
+                                follower count. On average, each new 1,000 followers results in a 15% increase in
+                                baseline story views, indicating a highly loyal and active base.
+                            </p>
+                        </div>
+                        <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                            <p class="text-xs font-bold text-slate-400 uppercase">Avg. Monthly Gain</p>
+                            <p class="text-lg font-bold text-slate-800">+1,450 Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Audience (Hidden by default) -->
+            <div id="tab-audience" class="hidden space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Audience Intelligence</h2>
+                    <p class="text-slate-500">Geographic and demographic distribution of your community.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold mb-6">Age Distribution</h4>
+                        <div class="chart-container">
+                            <canvas id="ageChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold mb-6">Top Locations (Cities)</h4>
+                        <div class="chart-container">
+                            <canvas id="locationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Content (Hidden by default) -->
+            <div id="tab-content" class="hidden space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Content Strategy</h2>
+                    <p class="text-slate-500">Analysis of the top performing content benchmarks from the last 6 months.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 glass-card p-8 rounded-2xl shadow-sm">
+                        <h4 class="font-bold mb-6">Engagement Benchmarks (Monthly Top Performers)</h4>
+                        <div class="chart-container">
+                            <canvas id="contentEfficiencyChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl shadow-sm">
+                            <h4 class="font-bold text-xs uppercase text-slate-400 mb-4">Historical Engagement Peaks</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-insta-pink text-white text-xs font-bold rounded">OCT: REEL
+                                    VIRAL</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded">DEC:
+                                    HOLIDAY GUIDE</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded">AUG:
+                                    LAUNCH PHASE</span>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl shadow-sm">
+                            <h4 class="font-bold text-xs uppercase text-slate-400 mb-4">6-Month Content Pillars</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center justify-between text-sm">
+                                    <span>Luxury Travel Reels</span>
+                                    <span class="font-bold text-green-600">8.2% ER</span>
+                                </li>
+                                <li class="flex items-center justify-between text-sm">
+                                    <span>Food Review Carousels</span>
+                                    <span class="font-bold text-slate-600">4.1% ER</span>
+                                </li>
+                                <li class="flex items-center justify-between text-sm">
+                                    <span>Lifestyle Stories</span>
+                                    <span class="font-bold text-slate-600">3.8% ER</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- Navigation Logic ---
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.getElementById('tab-overview').classList.add('hidden');
+            document.getElementById('tab-audience').classList.add('hidden');
+            document.getElementById('tab-content').classList.add('hidden');
+
+            // Show active tab
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Update Navigation Styles
+            const navs = ['overview', 'audience', 'content'];
+            navs.forEach(nav => {
+                const el = document.getElementById('nav-' + nav);
+                if (nav === tabId) {
+                    el.classList.add('bg-slate-800', 'text-white');
+                    el.classList.remove('hover:bg-slate-800');
+                } else {
+                    el.classList.remove('bg-slate-800', 'text-white');
+                    el.classList.add('hover:bg-slate-800');
+                }
+            });
+        }
+
+        // --- Chart Configurations ---
+        document.addEventListener('DOMContentLoaded', function () {
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.color = '#94a3b8';
+
+            // 1. 6-Month Growth Chart
+            new Chart(document.getElementById('growthChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Aug 2025', 'Sep 2025', 'Oct 2025', 'Nov 2025', 'Dec 2025', 'Jan 2026'],
+                    datasets: [{
+                        label: 'Followers',
+                        data: [32500, 34200, 35900, 38100, 40300, 41200],
+                        borderColor: '#E1306C',
+                        backgroundColor: 'rgba(225, 48, 108, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            grid: { color: '#f1f5f9' },
+                            ticks: {
+                                callback: function (value) {
+                                    return (value / 1000) + 'k';
+                                }
+                            }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 2. Age Distribution Chart (Generally stable over 6 months)
+            new Chart(document.getElementById('ageChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['18-24', '25-34', '35-44', '45+'],
+                    datasets: [{
+                        data: [28, 54, 12, 6],
+                        backgroundColor: ['#E1306C', '#833AB4', '#F56040', '#F77737'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } }
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            // 3. Location Chart (Top performance cities)
+            new Chart(document.getElementById('locationChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mumbai', 'Delhi', 'Bangalore', 'London', 'Dubai'],
+                    datasets: [{
+                        label: 'Reach %',
+                        data: [24, 18, 12, 9, 7],
+                        backgroundColor: '#833AB4',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true, grid: { display: false } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 4. Content Efficiency Chart (Benchmarked across 6 months)
+            new Chart(document.getElementById('contentEfficiencyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+                    datasets: [
+                        {
+                            label: 'Avg. Monthly Reach (k)',
+                            data: [42, 48, 110, 52, 98, 55],
+                            backgroundColor: '#e2e8f0',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Avg. Monthly Engagement (%)',
+                            type: 'line',
+                            data: [4.1, 4.3, 8.4, 4.5, 7.2, 4.8],
+                            borderColor: '#F56040',
+                            borderWidth: 2,
+                            yAxisID: 'y1',
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { position: 'left', beginAtZero: true, title: { display: true, text: 'Avg Reach (k)' } },
+                        y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: 'Eng %' } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

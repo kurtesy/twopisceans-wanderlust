@@ -4,69 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, Clock, DollarSign } from "lucide-react";
-import mountainsImg from "@/assets/destination-mountains.jpg";
-import cityImg from "@/assets/destination-city.jpg";
-import islandImg from "@/assets/destination-island.jpg";
+import { Link } from "react-router-dom";
+import { travelItineraries as itineraries } from "@/data/travelItineraries";
 
-const itineraries = [
-  {
-    id: 1,
-    title: "Alpine Adventure: Swiss Alps Explorer",
-    location: "Switzerland",
-    duration: "7 Days",
-    price: "$2,499",
-    difficulty: "Moderate",
-    season: "June - September",
-    image: mountainsImg,
-    description: "Experience the majestic Swiss Alps with pristine hiking trails, charming villages, and breathtaking mountain vistas.",
-    highlights: [
-      "Matterhorn base camp trek",
-      "Traditional Swiss cheese making",
-      "Cable car rides to mountain peaks",
-      "Stay in authentic alpine chalets"
-    ]
-  },
-  {
-    id: 2,
-    title: "Central European Culture Trail",
-    location: "Prague & Vienna",
-    duration: "10 Days",
-    price: "$3,299",
-    difficulty: "Easy",
-    season: "Year-round",
-    image: cityImg,
-    description: "Immerse yourself in centuries of history, stunning architecture, and vibrant culture across two iconic European capitals.",
-    highlights: [
-      "Prague Castle and Charles Bridge",
-      "Vienna Opera House performance",
-      "Traditional beer halls and cafes",
-      "UNESCO World Heritage sites"
-    ]
-  },
-  {
-    id: 3,
-    title: "Tropical Island Paradise Escape",
-    location: "Maldives",
-    duration: "5 Days",
-    price: "$4,999",
-    difficulty: "Easy",
-    season: "November - April",
-    image: islandImg,
-    description: "Discover crystal-clear waters, pristine white beaches, and luxurious overwater bungalows in this tropical paradise.",
-    highlights: [
-      "Snorkeling with manta rays",
-      "Private beach dining experiences",
-      "Overwater villa accommodation",
-      "Sunset dolphin cruises"
-    ]
-  }
-];
 
 const Itineraries = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       <section className="pt-32 pb-20 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -83,8 +29,8 @@ const Itineraries = () => {
               <Card key={itinerary.id} className="overflow-hidden border-border hover:shadow-2xl smooth-transition">
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="relative h-64 md:h-auto overflow-hidden">
-                    <img 
-                      src={itinerary.image} 
+                    <img
+                      src={itinerary.image}
                       alt={itinerary.title}
                       className="w-full h-full object-cover hover:scale-110 smooth-transition"
                     />
@@ -92,7 +38,7 @@ const Itineraries = () => {
                       {itinerary.difficulty}
                     </Badge>
                   </div>
-                  
+
                   <div className="p-8">
                     <CardHeader className="p-0 mb-4">
                       <div className="flex items-center gap-2 mb-2 text-primary">
@@ -102,7 +48,7 @@ const Itineraries = () => {
                       <CardTitle className="text-3xl mb-2">{itinerary.title}</CardTitle>
                       <CardDescription className="text-base">{itinerary.description}</CardDescription>
                     </CardHeader>
-                    
+
                     <CardContent className="p-0">
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="flex items-center gap-2 text-muted-foreground">
@@ -118,7 +64,7 @@ const Itineraries = () => {
                           <span className="text-sm">Best season: {itinerary.season}</span>
                         </div>
                       </div>
-                      
+
                       <div className="mb-6">
                         <h4 className="font-semibold mb-3 text-foreground">Trip Highlights:</h4>
                         <ul className="space-y-2">
@@ -130,12 +76,14 @@ const Itineraries = () => {
                           ))}
                         </ul>
                       </div>
-                      
-                      <Button 
-                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition"
-                      >
-                        View Full Itinerary
-                      </Button>
+
+                      <Link to={`/itineraries/${itinerary.slug}`}>
+                        <Button
+                          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition"
+                        >
+                          View Full Itinerary
+                        </Button>
+                      </Link>
                     </CardContent>
                   </div>
                 </div>

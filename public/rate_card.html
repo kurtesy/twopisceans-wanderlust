@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweta Suman | Interactive Media Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#FAFAF9', /* stone-50 */
+                        'brand-primary': '#44403C', /* stone-700 */
+                        'brand-accent': '#D4AF37', /* Gold */
+                        'brand-light': '#E7E5E4', /* stone-200 */
+                        'brand-white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FAFAF9;
+            color: #44403C;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5952f;
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Chosen Palette: Luxury Minimalist (Stone/Warm Grey with Gold Accents) -->
+    <!-- Application Structure Plan: 
+         The app is designed as an interactive "Digital Media Kit" rather than a static document.
+         1. Hero Header: Immediate identity and niche establishment.
+         2. Interactive Dashboard: Central hub containing "About", "Stats", and "Visuals". This allows brands to quickly scan key metrics.
+         3. Campaign Calculator (The Core Interaction): Transforms the static rate card into a budgeting tool. Users can simulate a campaign (e.g., 2 Reels + 1 Story) to see estimated costs and reach.
+         4. Service Breakdown: Detailed view of offerings with a visual price comparison chart.
+         5. Contact/CTA: Clear path to action.
+         
+         Why this structure? It mimics the decision-making process of a brand manager: Who are they? (Hero) -> Do they have the numbers? (Stats) -> Can we afford them/What do we get? (Calculator) -> Let's book.
+    -->
+    <!-- Visualization & Content Choices:
+         1. Stats Counters: Dynamic numbers for Followers/Engagement to grab attention. Goal: Inform.
+         2. Campaign Calculator: Input fields + JS Logic. Goal: Engage/Plan. Allows users to "play" with the rates.
+         3. Price Comparison Chart (Chart.js Bar): Visualizes the cost difference between formats (Reel vs Post vs Story). Goal: Compare. Helps justify the higher cost of video content.
+         4. Niche Tags: Simple pill design. Goal: Inform.
+         NO SVG used. NO Mermaid used.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation -->
+    <nav class="w-full bg-brand-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold serif-font tracking-wide">SWETA SUMAN</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider">
+                <a href="#about" class="hover:text-brand-accent transition-colors">ABOUT</a>
+                <a href="#metrics" class="hover:text-brand-accent transition-colors">METRICS</a>
+                <a href="#calculator" class="hover:text-brand-accent transition-colors">CALCULATOR</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">CONTACT</a>
+            </div>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+                class="md:hidden text-brand-primary font-bold">Menu</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="w-full bg-brand-bg py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block p-1 border-2 border-brand-accent rounded-full mb-6">
+                <!-- Placeholder for Profile Image using CSS/Text -->
+                <div
+                    class="w-32 h-32 bg-brand-light rounded-full flex items-center justify-center text-4xl text-brand-primary font-serif">
+                    SS
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold serif-font mb-4 text-brand-primary">Content Creator</h1>
+            <p class="text-lg md:text-xl text-stone-500 italic mb-2">Travel | Lifestyle | Food</p>
+            <div class="text-brand-accent font-bold tracking-widest text-sm uppercase mb-8">@thetwopisceans</div>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <span
+                    class="px-4 py-2 bg-white border border-brand-light rounded-full text-xs font-bold tracking-wide">LUXURY
+                    TRAVEL</span>
+                <span
+                    class="px-4 py-2 bg-white border border-brand-light rounded-full text-xs font-bold tracking-wide">FOOD
+                    REVIEWS</span>
+                <span
+                    class="px-4 py-2 bg-white border border-brand-light rounded-full text-xs font-bold tracking-wide">LIFESTYLE
+                    AESTHETICS</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-6xl mx-auto px-4 pb-20 space-y-20">
+
+        <!-- Section 1: About & Metrics Dashboard -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- About Text -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-brand-accent">
+                <h2 class="text-2xl serif-font font-bold mb-4">About Me</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    I specialize in creating high-quality, engaging content focused on travel experiences, lifestyle
+                    aesthetics, and culinary adventures. My goal is to bridge the gap between brands and a highly
+                    engaged audience through authentic storytelling.
+                </p>
+                <div class="p-4 bg-brand-bg rounded-lg">
+                    <h3 class="font-bold text-sm uppercase tracking-wide mb-2 text-brand-accent">Core Philosophy</h3>
+                    <p class="text-sm italic text-stone-500">"Bridging the gap between brands and audience through
+                        authentic storytelling."</p>
+                </div>
+            </div>
+
+            <!-- Metrics Dashboard -->
+            <div id="metrics" class="space-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="bg-brand-primary text-white p-6 rounded-xl text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl md:text-4xl font-bold serif-font mb-1">41.2K+</div>
+                        <div class="text-xs uppercase tracking-widest opacity-80">Followers</div>
+                    </div>
+                    <div
+                        class="bg-brand-accent text-white p-6 rounded-xl text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl md:text-4xl font-bold serif-font mb-1">45K+</div>
+                        <div class="text-xs uppercase tracking-widest opacity-80">Avg. Reel Views</div>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-brand-light">
+                    <h3 class="text-center font-bold mb-4 text-sm uppercase tracking-wide">Content Value Comparison</h3>
+                    <div class="chart-container">
+                        <canvas id="ratesChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-stone-400 mt-4">Comparative cost of investment per content
+                        format.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Interactive Campaign Calculator -->
+        <section id="calculator" class="bg-stone-800 text-stone-100 rounded-2xl p-8 md:p-12 shadow-xl">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl serif-font text-brand-accent mb-3">Campaign Planner</h2>
+                    <p class="text-stone-400 text-sm md:text-base">
+                        Use this interactive tool to estimate the investment and potential reach for your collaboration.
+                        Adjust the quantities below to build your custom package.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- Service 1 -->
+                    <div class="bg-stone-700 p-6 rounded-lg border border-stone-600 flex flex-col items-center">
+                        <h3 class="serif-font text-xl mb-1">Instagram Reel</h3>
+                        <p class="text-xs text-stone-400 mb-4">High-quality video, product focus</p>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">&euro;400</div>
+                        <div class="flex items-center space-x-4 bg-stone-800 rounded-full px-4 py-2">
+                            <button onclick="updateCount('reel', -1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">-</button>
+                            <span id="reel-count" class="font-mono text-lg w-4 text-center">0</span>
+                            <button onclick="updateCount('reel', 1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-stone-700 p-6 rounded-lg border border-stone-600 flex flex-col items-center">
+                        <h3 class="serif-font text-xl mb-1">Carousel Post</h3>
+                        <p class="text-xs text-stone-400 mb-4">4-8 pictures, dedicated caption</p>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">&euro;250</div>
+                        <div class="flex items-center space-x-4 bg-stone-800 rounded-full px-4 py-2">
+                            <button onclick="updateCount('post', -1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">-</button>
+                            <span id="post-count" class="font-mono text-lg w-4 text-center">0</span>
+                            <button onclick="updateCount('post', 1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-stone-700 p-6 rounded-lg border border-stone-600 flex flex-col items-center">
+                        <h3 class="serif-font text-xl mb-1">Story</h3>
+                        <p class="text-xs text-stone-400 mb-4">Engaging story + Direct Link</p>
+                        <div class="text-2xl font-bold text-brand-accent mb-4">&euro;150</div>
+                        <div class="flex items-center space-x-4 bg-stone-800 rounded-full px-4 py-2">
+                            <button onclick="updateCount('story', -1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">-</button>
+                            <span id="story-count" class="font-mono text-lg w-4 text-center">0</span>
+                            <button onclick="updateCount('story', 1)"
+                                class="text-xl font-bold hover:text-brand-accent w-6">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Totals -->
+                <div class="bg-stone-900 rounded-xl p-6 border-t-2 border-brand-accent">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">Estimated Total Cost
+                            </div>
+                            <div class="text-4xl serif-font text-white" id="total-cost">&euro;0</div>
+                        </div>
+                        <div class="md:text-right">
+                            <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">Potential Reach (Reels
+                                Only)</div>
+                            <div class="text-4xl serif-font text-brand-accent" id="total-reach">0 <span
+                                    class="text-base text-stone-400 font-sans">views</span></div>
+                            <p class="text-[10px] text-stone-500 mt-2">*Reach estimate based on average Reel
+                                performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Contact & Packages -->
+        <section id="contact" class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl serif-font font-bold mb-6">Let's Collaborate</h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-brand-light mb-8">
+                <h3 class="font-bold text-lg mb-2">Combo Packages & Long-term Partnerships</h3>
+                <p class="text-stone-600 mb-6">Available upon request. Custom packages can be tailored to meet your
+                    campaign's specific goals and budget.</p>
+
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="mailto:contact@example.com"
+                        class="px-8 py-3 bg-brand-primary text-white font-bold rounded hover:bg-stone-800 transition-colors">
+                        Email Me
+                    </a>
+                    <a href="https://instagram.com/thetwopisceans" target="_blank"
+                        class="px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary font-bold rounded hover:bg-brand-bg transition-colors">
+                        Visit Instagram
+                    </a>
+                </div>
+                <p class="text-xs text-stone-400 mt-6 italic">Rates are subject to change based on project complexity
+                    and usage rights.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-primary text-stone-400 py-8 text-center text-sm">
+        <p>&copy; 2024 Sweta Suman. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Data & State Management ---
+        const rates = {
+            reel: 400,
+            post: 250,
+            story: 150
+        };
+
+        const metrics = {
+            avgReelViews: 45000 // Average of 40k-50k
+        };
+
+        let cart = {
+            reel: 0,
+            post: 0,
+            story: 0
+        };
+
+        // --- Core Interaction Handling: Calculator ---
+        function updateCount(service, change) {
+            const current = cart[service];
+            const newValue = current + change;
+
+            if (newValue >= 0) {
+                cart[service] = newValue;
+                document.getElementById(`${service}-count`).textContent = newValue;
+                calculateTotals();
+            }
+        }
+
+        function calculateTotals() {
+            // Financial Total
+            const totalCost = (cart.reel * rates.reel) +
+                (cart.post * rates.post) +
+                (cart.story * rates.story);
+
+            // Reach Total (Focusing on Reels as primary engagement driver based on Rate Card stats)
+            const totalReach = cart.reel * metrics.avgReelViews;
+
+            // Update DOM with Animation (Simple Counter Effect)
+            document.getElementById('total-cost').textContent = '€' + totalCost.toLocaleString();
+            document.getElementById('total-reach').innerHTML = totalReach.toLocaleString() + ' <span class="text-base text-stone-400 font-sans">views</span>';
+        }
+
+        // --- Chart.js Implementation ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('ratesChart').getContext('2d');
+
+            // Chart Styling to match theme
+            Chart.defaults.font.family = "'Lato', sans-serif";
+            Chart.defaults.color = '#78716c';
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Instagram Reel', 'Carousel Post', 'Story'],
+                    datasets: [{
+                        label: 'Service Rate (€)',
+                        data: [rates.reel, rates.post, rates.story],
+                        backgroundColor: [
+                            '#D4AF37', // Gold for premium/highest
+                            '#44403C', // Dark Stone
+                            '#A8A29E'  // Light Stone
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#2F4F4F',
+                            titleFont: { family: "'Playfair Display', serif" },
+                            callbacks: {
+                                label: function (context) {
+                                    return 'Rate: €' + context.raw;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#f5f5f4'
+                            },
+                            ticks: {
+                                callback: function (value) {
+                                    return '€' + value;
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

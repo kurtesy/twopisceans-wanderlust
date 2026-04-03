@@ -18,6 +18,9 @@ import {
 } from "lucide-react";
 
 import cityImg from "@/assets/destination-city.jpg";
+import icelandImg from "@/assets/iceland-1.jpg";
+import ukImg from "@/assets/UK-1.jpg"
+import corfuImg from "@/assets/corfu-1.jpg"
 import beachImg from "@/assets/destination-island.jpg";
 import festivalImg from "@/assets/hero-beach.jpg";
 
@@ -35,7 +38,7 @@ export const travelItineraries = [
         price: "€3,787",
         difficulty: "Moderate",
         season: "February",
-        image: cityImg,
+        image: icelandImg,
         description:
             "A winter adventure through Iceland's dramatic landscapes — from volcanic craters and glacier caves to geothermal lagoons and the magical Northern Lights above Reykjavik.",
         highlights: [
@@ -127,7 +130,7 @@ export const travelItineraries = [
         price: "£2,844",
         difficulty: "Moderate",
         season: "April - May",
-        image: cityImg,
+        image: ukImg,
         description:
             "An epic journey through the United Kingdom — from London's iconic landmarks to Scotland's Highland lochs, Northern Ireland's rugged coastline, the valleys of Wales, and a Harry Potter finale.",
         highlights: [
@@ -301,7 +304,7 @@ export const travelItineraries = [
         price: "€TBD",
         difficulty: "Easy",
         season: "June",
-        image: beachImg,
+        image: corfuImg,
         description:
             "Sun, sea and the stunning Ionian coastline — a perfect summer escape combining the lush Greek island of Corfu with the hidden gem of the Albanian Riviera, Saranda.",
         highlights: [

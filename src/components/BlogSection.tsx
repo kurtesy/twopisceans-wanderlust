@@ -1,32 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-
-const blogPosts = [
-  {
-    title: "10 Essential Tips for Solo Travel in Southeast Asia",
-    excerpt: "Discover our top recommendations for safely navigating and enjoying your solo journey through Thailand, Vietnam, and Cambodia.",
-    date: "March 15, 2025",
-    readTime: "8 min read",
-    category: "Travel Tips"
-  },
-  {
-    title: "Hidden Gems of the Mediterranean",
-    excerpt: "Explore lesser-known coastal towns and villages that offer authentic experiences away from tourist crowds.",
-    date: "March 10, 2025",
-    readTime: "6 min read",
-    category: "Destinations"
-  },
-  {
-    title: "Sustainable Travel: How We Minimize Our Footprint",
-    excerpt: "Learn about our approach to responsible tourism and practical ways to travel more sustainably.",
-    date: "March 5, 2025",
-    readTime: "7 min read",
-    category: "Travel Tips"
-  }
-];
+import { blogPosts } from "@/data/blogPosts";
 
 export const BlogSection = () => {
+  const latestPosts = blogPosts.slice(0, 3);
   return (
     <section className="py-20 px-4 bg-accent/30">
       <div className="max-w-7xl mx-auto">
@@ -40,9 +18,9 @@ export const BlogSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {latestPosts.map((post) => (
             <Card 
-              key={index}
+              key={post.id}
               className="group hover:shadow-xl smooth-transition bg-card border-border"
             >
               <CardContent className="p-6">

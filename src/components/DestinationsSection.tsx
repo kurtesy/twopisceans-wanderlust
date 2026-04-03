@@ -1,35 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
-import mountainsImg from "@/assets/destination-mountains.jpg";
-import cityImg from "@/assets/destination-city.jpg";
-import islandImg from "@/assets/destination-island.jpg";
-
-const destinations = [
-  {
-    title: "Mountain Adventures",
-    location: "Swiss & Italian Alps",
-    description: "Experience breathtaking peaks, pristine hiking trails, and charming alpine villages.",
-    image: mountainsImg,
-    duration: "7 Days"
-  },
-  {
-    title: "Central Europe",
-    location: "Austria & Germany",
-    description: "Immerse yourself in history, culture, and stunning architecture across Central Europe.",
-    image: cityImg,
-    duration: "10 Days"
-  },
-  {
-    title: "Tropical Paradise",
-    location: "Seychelles",
-    description: "Discover crystal-clear waters, white sand beaches, and unforgettable sunsets.",
-    image: islandImg,
-    duration: "7 Days"
-  }
-];
+import { Link } from "react-router-dom";
+import { travelItineraries } from "@/data/travelItineraries";
 
 export const DestinationsSection = () => {
+  const featuredItineraries = travelItineraries.slice(0, 3);
   return (
     <section className="py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -43,52 +19,57 @@ export const DestinationsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
+          {featuredItineraries.map((itinerary) => (
             <Card
-              key={index}
+              key={itinerary.id}
               className="overflow-hidden group hover:shadow-2xl smooth-transition border-border"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={destination.image}
-                  alt={destination.title}
+                  src={itinerary.image}
+                  alt={itinerary.title}
                   className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
                 />
                 <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                  {destination.duration}
+                  {itinerary.duration}
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-2 text-primary">
                   <MapPin className="h-4 w-4" />
-                  <span className="text-sm font-medium">{destination.location}</span>
+                  <span className="text-sm font-medium">{itinerary.location}</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-card-foreground">
-                  {destination.title}
+                  {itinerary.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
-                  {destination.description}
+                <p className="text-muted-foreground mb-4 line-clamp-2">
+                  {itinerary.description}
                 </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
-                >
-                  View Itinerary
-                </Button>
+                <Link to={`/itineraries/${itinerary.slug}`}>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
+                  >
+                    View Itinerary
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition"
-          >
-            View All Destinations
-          </Button>
+          <Link to="/itineraries">
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition"
+            >
+              View All Destinations
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
+

@@ -1,11 +1,11 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { MapPin, Calendar, Clock, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
-import { travelItineraries as itineraries } from "@/data/travelItineraries";
+import { travelItineraries as itineraries } from "../data/travelItineraries";
 
 
 const Itineraries = () => {

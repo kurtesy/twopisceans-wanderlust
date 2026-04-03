@@ -37,6 +37,16 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="/links" className="text-muted-foreground hover:text-primary smooth-transition">
+                  Links
+                </a>
+              </li>
+              <li>
+                <a href="/media-kit" className="text-muted-foreground hover:text-primary smooth-transition">
+                  Media Kit
+                </a>
+              </li>
+              <li>
                 <a href="/about" className="text-muted-foreground hover:text-primary smooth-transition">
                   About Us
                 </a>

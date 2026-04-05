@@ -22,7 +22,7 @@ import icelandImg from "@/assets/iceland-1.jpg";
 import ukImg from "@/assets/UK-1.jpg"
 import corfuImg from "@/assets/corfu-1.jpg"
 import beachImg from "@/assets/destination-island.jpg";
-import festivalImg from "@/assets/hero-beach.jpg";
+import festivalImg from "@/assets/hero-1.jpg";
 
 export const travelItineraries = [
 

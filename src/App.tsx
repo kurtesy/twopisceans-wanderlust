@@ -7,11 +7,13 @@ import Index from "./pages/Index";
 import Itineraries from "./pages/Itineraries"
 import ItineraryDetail from "./pages/ItineraryDetail";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Tips from "./pages/Tips";
 import TipDetail from "./pages/TipDetail";
 import ReelsPage from "./pages/Reels"; // Renamed to avoid conflict with component name
+import MapPage from "./pages/Map";
 import LinksPage from "./pages/Links";
 import MediaKitPage from "./pages/MediaKit";
 import NotFound from "./pages/NotFound";
@@ -29,11 +31,13 @@ const App = () => (
           <Route path="/itineraries" element={<Itineraries />} />
           <Route path="/itineraries/:slug" element={<ItineraryDetail />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tips" element={<Tips />} />
           <Route path="/tips/:slug" element={<TipDetail />} />
           <Route path="/reels" element={<ReelsPage />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="/media-kit" element={<MediaKitPage />} />
           <Route path="/links" element={<LinksPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

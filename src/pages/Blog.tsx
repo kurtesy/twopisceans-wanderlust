@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
@@ -30,48 +31,49 @@ const Blog = () => {
             <h2 className="text-3xl font-bold mb-8 text-foreground">Featured Stories</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featuredPosts.map((post) => (
-                <Card 
-                  key={post.id} 
-                  className="overflow-hidden group hover:shadow-2xl smooth-transition border-border cursor-pointer"
-                >
-                  <div className="relative h-72 overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                      {post.category}
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {post.readTime}
-                      </span>
+                <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Card 
+                    className="overflow-hidden group hover:shadow-2xl smooth-transition border-border cursor-pointer h-full"
+                  >
+                    <div className="relative h-72 overflow-hidden">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
+                      />
+                      <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                        {post.category}
+                      </Badge>
                     </div>
-                    <CardTitle className="text-2xl mb-2 group-hover:text-primary smooth-transition">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="text-base">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
-                    >
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          {post.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                      <CardTitle className="text-2xl mb-2 group-hover:text-primary smooth-transition">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription className="text-base">
+                        {post.excerpt}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button 
+                        variant="outline" 
+                        className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
+                      >
+                        Read More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -81,48 +83,49 @@ const Blog = () => {
             <h2 className="text-3xl font-bold mb-8 text-foreground">More Stories</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPosts.map((post) => (
-                <Card 
-                  key={post.id} 
-                  className="overflow-hidden group hover:shadow-2xl smooth-transition border-border cursor-pointer"
-                >
-                  <div className="relative h-56 overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-secondary text-secondary-foreground">
-                      {post.category}
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {post.readTime}
-                      </span>
+                <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Card 
+                    className="overflow-hidden group hover:shadow-2xl smooth-transition border-border cursor-pointer h-full"
+                  >
+                    <div className="relative h-56 overflow-hidden">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
+                      />
+                      <Badge className="absolute top-4 left-4 bg-secondary text-secondary-foreground">
+                        {post.category}
+                      </Badge>
                     </div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary smooth-transition">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription>
-                      {post.excerpt.substring(0, 100)}...
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button 
-                      variant="ghost" 
-                      className="w-full text-primary hover:bg-primary/10 smooth-transition"
-                    >
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          {post.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                      <CardTitle className="text-xl mb-2 group-hover:text-primary smooth-transition">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription>
+                        {post.excerpt.substring(0, 100)}...
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button 
+                        variant="ghost" 
+                        className="w-full text-primary hover:bg-primary/10 smooth-transition"
+                      >
+                        Read More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

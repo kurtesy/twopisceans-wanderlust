@@ -28,6 +28,9 @@ export const Navbar = () => {
             <Link to="/reels" className="text-foreground hover:text-primary smooth-transition">
               Reels
             </Link>
+            <Link to="/map" className="text-foreground hover:text-primary smooth-transition">
+              Map
+            </Link>
             <Button
               variant="outline"
               size="sm"

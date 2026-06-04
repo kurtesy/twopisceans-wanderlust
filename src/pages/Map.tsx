@@ -8,7 +8,7 @@ import {
 } from "react-simple-maps";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { travelLocations } from "@/data/travelLocations";
+import { travelLocations, type TravelLocation } from "@/data/travelLocations";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 const MapPage = () => {
   const [content, setContent] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState<any>(null);
+  const [selectedLocation, setSelectedLocation] = useState<TravelLocation | null>(null);
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">

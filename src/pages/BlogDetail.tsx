@@ -3,7 +3,7 @@ import { blogPosts } from "../data/blogPosts";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import NotFound from "./NotFound";
-import { Calendar, Clock, Badge } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 import {
     Breadcrumb,
     BreadcrumbItem,

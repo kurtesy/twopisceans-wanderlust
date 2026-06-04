@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 
 export const BlogSection = () => {
@@ -43,26 +44,30 @@ export const BlogSection = () => {
                     <span>{post.readTime}</span>
                   </div>
                 </div>
-                <Button 
-                  variant="ghost" 
-                  className="group/btn p-0 h-auto text-primary hover:text-primary/80 smooth-transition"
-                >
-                  Read More 
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 smooth-transition" />
-                </Button>
+                <Link to={`/blog/${post.slug}`}>
+                  <Button
+                    variant="ghost"
+                    className="group/btn p-0 h-auto text-primary hover:text-primary/80 smooth-transition"
+                  >
+                    Read More
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 smooth-transition" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
-          >
-            View All Blog Posts
-          </Button>
+          <Link to="/blog">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground smooth-transition"
+            >
+              View All Blog Posts
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

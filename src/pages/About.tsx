@@ -1,10 +1,11 @@
+import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export default function About() {
     return (
         <div className="flex flex-col min-h-screen">
-            {/* You might want to add a Navbar component here */}
-            <main className="flex-grow container mx-auto px-4 py-16">
+            <Navbar />
+            <main className="flex-grow container mx-auto px-4 pt-32 pb-16">
                 <div className="max-w-3xl mx-auto text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">About The Two Pisceans</h1>
                     <p className="text-xl text-muted-foreground mb-8">

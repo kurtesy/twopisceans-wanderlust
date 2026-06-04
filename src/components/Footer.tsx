@@ -1,5 +1,17 @@
 import { Instagram, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+
+const quickLinks = [
+  { name: "Travel Itineraries", path: "/itineraries" },
+  { name: "Blog", path: "/blog" },
+  { name: "Travel Tips", path: "/tips" },
+  { name: "Reels", path: "/reels" },
+  { name: "Links", path: "/links" },
+  { name: "Media Kit", path: "/media-kit" },
+  { name: "About Us", path: "/about" },
+  { name: "Contact Us", path: "/contact" },
+];
 
 export const Footer = () => {
   return (
@@ -16,46 +28,13 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-card-foreground">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="/itineraries" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Travel Itineraries
-                </a>
-              </li>
-              <li>
-                <a href="/blog" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="/tips" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Travel Tips
-                </a>
-              </li>
-              <li>
-                <a href="/reels" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Reels
-                </a>
-              </li>
-              <li>
-                <a href="/links" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Links
-                </a>
-              </li>
-              <li>
-                <a href="/media-kit" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Media Kit
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-muted-foreground hover:text-primary smooth-transition">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-muted-foreground hover:text-primary smooth-transition">
-                  Contact Us
-                </a>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary smooth-transition">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

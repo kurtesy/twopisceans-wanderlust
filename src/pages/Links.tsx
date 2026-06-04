@@ -9,6 +9,7 @@ import {
 import profilePic from '@/assets/me.jpeg';
 import travelBg from '@/assets/travel-dark-bg-1.jpg';
 import logo from '@/assets/logo.png';
+import { Navbar } from '@/components/Navbar';
 
 const links = [
     { href: 'https://getyourguide.tp.st/O2gRPpzL', src: 'https://raw.githubusercontent.com/thetwopisceans/linktree/c68cb473d2de1454e1949e6ca44971d5c296921d/assets/gyg_logo.svg', alt: 'GetYourGuide' },
@@ -31,9 +32,10 @@ const links = [
 const LinksPage = () => {
     return (
         <div
-            className="flex min-h-screen flex-col items-center justify-center bg-[#121212] bg-cover bg-fixed bg-center bg-no-repeat bg-blend-luminosity py-16 text-white"
+            className="flex min-h-screen flex-col items-center justify-center bg-[#121212] bg-cover bg-fixed bg-center bg-no-repeat bg-blend-luminosity pt-24 pb-16 text-white"
             style={{ backgroundImage: `url(${travelBg})` }}
         >
+            <Navbar />
             <img
                 src={profilePic}
                 alt="The Two Piscean's profile pic"

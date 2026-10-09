@@ -666,6 +666,98 @@
       text-transform: uppercase;
     }
 
+
+    /* ─── PARTNER GROUPS ─── */
+    .logo-group-title {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin: 44px auto 20px;
+      max-width: 1200px;
+    }
+
+    .logo-group-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .recent-collabs {
+      margin-top: 48px;
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--text-soft);
+    }
+
+    .recent-collabs span {
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 8px;
+    }
+
+    /* ─── AUDIENCE LOCATION ─── */
+    .audience-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 80px;
+    }
+
+    .audience-section h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .audience-section .audience-sub {
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    .aud-row {
+      display: grid;
+      grid-template-columns: 190px 1fr 70px;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .aud-name {
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .aud-track {
+      height: 10px;
+      background: var(--light-gray);
+    }
+
+    .aud-fill {
+      height: 100%;
+      background: var(--text);
+    }
+
+    .aud-fill.soft {
+      background: var(--mid-gray);
+    }
+
+    .aud-pct {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      text-align: right;
+    }
+
     @media (max-width: 900px) {
 
       .cover-top-photos,
@@ -691,6 +783,15 @@
       .about-page-inner {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+
+      .audience-section {
+        padding: 60px 32px;
+      }
+
+      .aud-row {
+        grid-template-columns: 110px 1fr 56px;
+        gap: 14px;
       }
 
       .about-page-section,
@@ -762,7 +863,8 @@
     <div class="about-sweta-text">
       <h2>Sweta Suman</h2>
       <p>Hi, I'm Sweta Suman, a passionate content creator and travel enthusiast. I specialize in capturing the essence
-        of medium-luxury travel &amp; dining experiences and have had the pleasure of working with some of the most
+        of medium-luxury and upscale travel, dining &amp; lifestyle experiences and have had the pleasure of working
+        with some of the most
         prestigious hotels and brands around the world.</p>
     </div>
     <div class="about-sweta-img">
@@ -774,7 +876,9 @@
   <section class="dining-section">
     <img src="mediakit/img-007.jpg" alt="Luxury dining experience" />
     <div class="dining-overlay">
-      <p>We have worked alongside a selection of renowned medium to luxury and upscale hotels — including <strong>Sheraton Cairo</strong>, <strong>Sindbad Club Hurghada</strong>, <strong>Almeyros Corfu</strong>, and many of the most recognized names in the industry.</p>
+      <p>We have worked alongside a selection of renowned luxury and upscale hotels — including <strong>Four
+          Seasons</strong>, <strong>St. Regis</strong>, <strong>Waldorf Astoria</strong> and <strong>W Hotels</strong> —
+        alongside recent stays at Sheraton Cairo, Sindbad Club Hurghada and Almeyros Corfu.</p>
     </div>
   </section>
 
@@ -804,66 +908,56 @@
 
   <!-- ══════════════ CLIENT LOGOS ══════════════ -->
   <section class="clients-section">
-    <h3>Current &amp; Previous Clients</h3>
+    <h3>Current &amp; Previous Partners</h3>
+    <h4 class="logo-group-title">Luxury Hotels &amp; Resorts</h4>
     <div class="logo-grid">
-      <div class="logo-item"><img src="https://img.logo.dev/ritzcarlton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="The Ritz-Carlton"></div>
       <div class="logo-item"><img src="https://img.logo.dev/fourseasons.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Four Seasons"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/stregis.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="St. Regis"></div>
+          alt="Four Seasons" loading="lazy"></div>
       <div class="logo-item"><img src="https://img.logo.dev/waldorfastoria.hilton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Waldorf Astoria"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/dior.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Christian Dior Parfums"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/w-hotels.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="W Hotels"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/soneva.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Soneva">
-      </div>
-      <div class="logo-item"><img src="https://img.logo.dev/jumeirah.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Jumeirah"></div>
-
-      <div class="logo-item"><img src="https://img.logo.dev/lhw.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Leading Hotels of the World"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/comohotels.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="COMO Hotels"></div>
+          alt="Waldorf Astoria" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/ritzcarlton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="The Ritz-Carlton" loading="lazy"></div>
       <div class="logo-item"><img src="https://img.logo.dev/mandarinoriental.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Mandarin Oriental"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/steigenberger.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Steigenberger"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/melia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Meliá">
-      </div>
+          alt="Mandarin Oriental" loading="lazy"></div>
       <div class="logo-item"><img src="https://img.logo.dev/sixsenses.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Six Senses"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/theluxurycollection.marriott.com"
-          alt="The Luxury Collection"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/fairmont.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Fairmont"></div>
-
-      <div class="logo-item"><img src="https://img.logo.dev/ihg.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="IHG"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/hilton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hilton">
-      </div>
-      <div class="logo-item"><img src="https://img.logo.dev/corinthia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Corinthia"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/barcelo.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Barceló">
-      </div>
-      <div class="logo-item"><img src="https://img.logo.dev/westin.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Westin"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/hotelbasilica.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Hotel Basilica" onerror="this.src='https://via.placeholder.com/150x50?text=Hotel+Basilica'"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/hyatt.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hyatt">
-      </div>
+          alt="Six Senses" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/soneva.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Soneva"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/jumeirah.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Jumeirah"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/comohotels.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="COMO Hotels" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/fairmont.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Fairmont"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/lhw.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Leading Hotels of the World" loading="lazy"></div>
       <div class="logo-item"><img src="https://img.logo.dev/sofitel.accor.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Sofitel"></div>
-      <div class="logo-item"><img src="https://img.logo.dev/sheraton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
-          alt="Sheraton Cairo"></div>
-      <div class="logo-item sindbad-logo">
-        <span class="text-logo">Sindbad Club<br><small>Hurghada</small></span>
-      </div>
-      <div class="logo-item almeyros-logo">
-        <span class="text-logo">Almeyros<br><small>Corfu</small></span>
-      </div>
+          alt="Sofitel" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/corinthia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Corinthia" loading="lazy"></div>
     </div>
+    <h4 class="logo-group-title">Premium Hotel Brands</h4>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="https://img.logo.dev/hyatt.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hyatt"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/hilton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hilton"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/westin.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Westin" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/melia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Meliá"
+          loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/steigenberger.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Steigenberger" loading="lazy"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/barcelo.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Barceló"
+          loading="lazy"></div>
+    </div>
+    <h4 class="logo-group-title">Lifestyle &amp; Fragrance</h4>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="https://img.logo.dev/dior.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Christian Dior Parfums" loading="lazy"></div>
+    </div>
+    <p class="recent-collabs"><span>Recent collaborations</span> Sheraton Cairo &middot; Sindbad Club Hurghada &middot;
+      Almeyros Corfu</p>
   </section>
 
   <!-- ══════════════ STATISTICS ══════════════ -->
@@ -893,13 +987,50 @@
         </div>
       </div>
 
-      <p>Our 700k – 800k monthly reach engages an affluent audience interested in stunning destinations, restaurants and
+      <p>Our 700k – 800k monthly reach engages an affluent audience interested in stunning destinations, fine dining,
+        lifestyle and
         high-end accommodations.</p>
       <p>Our website, driven by Instagram receives 6000–7000 monthly visits.</p>
       <p>Together, our Instagram and website create a seamless brand experience, driving traffic, engagement, and
         conversions in the medium to luxury travel niche.</p>
       <p class="bold-note">We are also launching the blog soon which will curate all the best stays, food finds and
         hidden gems from around the world.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ AUDIENCE LOCATION ══════════════ -->
+  <section class="audience-section">
+    <span class="section-label">Audience</span>
+    <h2>Where our audience is</h2>
+    <p class="audience-sub">A Europe-led, English-speaking audience of affluent travellers and lifestyle-minded
+      explorers.</p>
+    <div class="aud-row">
+      <div class="aud-name">Germany</div>
+      <div class="aud-track">
+        <div class="aud-fill" style="width:45%"></div>
+      </div>
+      <div class="aud-pct">45%</div>
+    </div>
+    <div class="aud-row">
+      <div class="aud-name">United States</div>
+      <div class="aud-track">
+        <div class="aud-fill" style="width:20%"></div>
+      </div>
+      <div class="aud-pct">20%</div>
+    </div>
+    <div class="aud-row">
+      <div class="aud-name">India</div>
+      <div class="aud-track">
+        <div class="aud-fill" style="width:10%"></div>
+      </div>
+      <div class="aud-pct">10%</div>
+    </div>
+    <div class="aud-row">
+      <div class="aud-name">Other EU countries</div>
+      <div class="aud-track">
+        <div class="aud-fill soft" style="width:25%"></div>
+      </div>
+      <div class="aud-pct">25%</div>
     </div>
   </section>
 
@@ -924,8 +1055,9 @@
       <h2>Our Solutions</h2>
 
       <div class="solution-item">
-        <h4>Design Social Media-Specific Digital Media for Hospitality Companies</h4>
-        <p>We create visually stunning, targeted content for luxury hotels, utilizing storytelling and interactive
+        <h4>Social-First Content for Travel, Hospitality &amp; Lifestyle Brands</h4>
+        <p>We create visually stunning, targeted content for premium hotels, resorts and lifestyle brands, utilizing
+          storytelling and interactive
           elements to engage affluent travelers and enhance brand recognition.</p>
       </div>
 

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>thetwopisceans — Partner Media Kit 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f7f6f4;
+      --light-gray: #efefed;
+      --mid-gray: #b0aca6;
+      --text: #1c1c1a;
+      --text-soft: #5a5753;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── COVER ─── */
+    .cover {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      background: var(--white);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cover-top-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      height: 320px;
+    }
+
+    .cover-top-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-title {
+      text-align: center;
+      padding: 64px 24px 60px;
+    }
+
+    .cover-title h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(42px, 7vw, 80px);
+      letter-spacing: 0.01em;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .cover-title p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-top: 14px;
+    }
+
+    .cover-bottom-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      height: 320px;
+    }
+
+    .cover-bottom-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── ABOUT SWETA ─── */
+    .about-sweta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-sweta-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 80px;
+    }
+
+    .about-sweta-text h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 36px;
+      letter-spacing: 0.01em;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    .about-sweta-text p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.85;
+      font-style: italic;
+      max-width: 360px;
+    }
+
+    .about-sweta-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-sweta-img img {
+      width: 100%;
+      height: 99%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ─── FULL BLEED DINING ─── */
+    .dining-section {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+    }
+
+    .dining-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .dining-overlay {
+      position: absolute;
+      bottom: 48px;
+      left: 64px;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 28px 36px;
+      max-width: 380px;
+      backdrop-filter: blur(4px);
+    }
+
+    .dining-overlay p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ─── HOTEL PHOTOS ─── */
+    .hotel-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 520px;
+    }
+
+    .hotel-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── ABOUT OUR PAGE ─── */
+    .about-page-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 80px;
+    }
+
+    .about-page-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-page-text h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 40px;
+      margin-bottom: 36px;
+      color: var(--text);
+    }
+
+    .about-page-text p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 14.5px;
+      color: var(--text-soft);
+      line-height: 1.9;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+
+    .about-page-right img.motorbike {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Client Logos */
+    .clients-section {
+      background: var(--off-white);
+      padding: 70px 80px;
+      text-align: center;
+    }
+
+    .clients-section h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 26px;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    .clients-logos img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: grayscale(20%);
+    }
+
+    /* ─── STATISTICS ─── */
+    .stats-section {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: 600px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .stats-left {
+      background: var(--off-white);
+      padding: 60px 48px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .stats-left img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+      border: 1px solid #e8e6e2;
+    }
+
+    .stats-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px 80px 80px;
+    }
+
+    .stats-right h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 40px;
+      margin-bottom: 44px;
+      color: var(--text);
+    }
+
+    .stats-right p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.85;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .stats-right p.bold-note {
+      font-weight: 400;
+      color: var(--text);
+      font-style: italic;
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 32px;
+    }
+
+    .stats-numbers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+      margin-bottom: 32px;
+    }
+
+    /* ─── PREVIOUS PARTNERSHIPS ─── */
+    .partnerships-hero {
+      position: relative;
+      height: 560px;
+      overflow: hidden;
+    }
+
+    .partnerships-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+
+    .partnerships-hero-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 28px;
+      backdrop-filter: blur(2px);
+    }
+
+    .partnerships-hero-caption h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 28px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    /* ─── PARTNERSHIPS PHOTO GRID ─── */
+    .partnerships-grid {
+      display: grid;
+      grid-template-rows: 360px 340px;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .partnerships-grid img:first-child {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .partnerships-grid img:not(:first-child) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ─── OUR SOLUTIONS ─── */
+    .solutions-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .solutions-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px 80px 80px;
+      background: var(--white);
+    }
+
+    .solutions-text h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 40px;
+      margin-bottom: 44px;
+      color: var(--text);
+    }
+
+    .solution-item {
+      margin-bottom: 36px;
+    }
+
+    .solution-item h4 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .solution-item p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.85;
+    }
+
+    .solutions-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solutions-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ─── CONTENT CREATION PACKAGE ─── */
+    .package-section {
+      background: var(--off-white);
+      padding: 90px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .package-section h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 40px;
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+
+    .package-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .package-list li {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .package-list li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--text-soft);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTACT CARD ─── */
+    .contact-section {
+      background: var(--white);
+    }
+
+    .contact-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 380px;
+    }
+
+    .contact-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .contact-info {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 80px;
+      text-align: center;
+    }
+
+    .contact-info h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 38px;
+      color: var(--text);
+      margin-bottom: 56px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+
+    .contact-item h4 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 10px;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    footer p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: var(--light-gray);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .logo-section-title {
+      text-align: center;
+      color: #333;
+      font-weight: normal;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo-grid {
+      display: grid;
+      /* Creates a responsive grid that fits as many 120px columns as possible */
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+      /* Fixed height to keep the grid uniform */
+      padding: 10px;
+    }
+
+    .logo-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      /* Ensures logos don't stretch */
+      filter: grayscale(100%);
+      /* Optional: makes them uniform like the original */
+      transition: filter 0.3s ease;
+    }
+
+    /* Optional: Adds color back when you hover over a logo */
+    .logo-item img:hover {
+      filter: grayscale(0%);
+    }
+
+    .text-logo {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      color: var(--mid-gray);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .text-logo small {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+
+      .cover-top-photos,
+      .cover-bottom-photos {
+        grid-template-columns: 1fr 1fr;
+        height: 240px;
+      }
+
+      .about-sweta,
+      .stats-section,
+      .solutions-section {
+        grid-template-columns: 1fr;
+      }
+
+      .about-sweta-text {
+        padding: 60px 32px;
+      }
+
+      .about-sweta-img {
+        height: 400px;
+      }
+
+      .about-page-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-page-section,
+      .clients-section,
+      .package-section {
+        padding: 60px 32px;
+      }
+
+      .stats-left {
+        padding: 40px 32px;
+      }
+
+      .stats-right {
+        padding: 60px 32px;
+      }
+
+      .solutions-text {
+        padding: 60px 32px;
+      }
+
+      .solutions-right {
+        height: 360px;
+      }
+
+      .partnerships-grid {
+        grid-template-rows: 280px 280px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .contact-info {
+        padding: 56px 32px;
+      }
+
+      .contact-photos {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════ COVER ══════════════ -->
+  <section class="cover">
+    <div class="cover-top-photos">
+      <img src="mediakit/img-000.jpg" alt="Hotel lobby with orb lights" />
+      <img src="mediakit/img-001.jpg" alt="Luxury pool with loungers" />
+      <img src="mediakit/img-002.jpg" alt="Sunset harbour view" />
+    </div>
+
+    <div class="cover-title">
+      <h1>thetwopisceans</h1>
+      <p>Partner Media Kit 2026</p>
+    </div>
+
+    <div class="cover-bottom-photos">
+      <img src="mediakit/img-003.jpg" alt="Fine dining with champagne" />
+      <img src="mediakit/img-005.jpg" alt="Candlelit beach dinner at dusk" />
+      <img src="mediakit/img-004.jpg" alt="Indoor pool at night" />
+    </div>
+  </section>
+
+  <!-- ══════════════ ABOUT SWETA ══════════════ -->
+  <section class="about-sweta">
+    <div class="about-sweta-text">
+      <h2>Sweta Suman</h2>
+      <p>Hi, I'm Sweta Suman, a passionate content creator and travel enthusiast. I specialize in capturing the essence
+        of medium-luxury travel &amp; dining experiences and have had the pleasure of working with some of the most
+        prestigious hotels and brands around the world.</p>
+    </div>
+    <div class="about-sweta-img">
+      <img src="mediakit/img-006.jpg" alt="Sweta Suman" />
+    </div>
+  </section>
+
+  <!-- ══════════════ DINING FULL BLEED ══════════════ -->
+  <section class="dining-section">
+    <img src="mediakit/img-007.jpg" alt="Luxury dining experience" />
+    <div class="dining-overlay">
+      <p>We have worked alongside a selection of renowned medium to luxury and upscale hotels — including <strong>Sheraton Cairo</strong>, <strong>Sindbad Club Hurghada</strong>, <strong>Almeyros Corfu</strong>, and many of the most recognized names in the industry.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ HOTEL PHOTOS ══════════════ -->
+  <section class="hotel-photos">
+    <img src="mediakit/img-008.jpg" alt="Sunrise ocean view from suite" />
+    <img src="mediakit/img-009.jpg" alt="Elegant hotel room with canopy bed" />
+  </section>
+
+  <!-- ══════════════ ABOUT OUR PAGE ══════════════ -->
+  <section class="about-page-section">
+    <div class="about-page-inner">
+      <div class="about-page-text">
+        <h2>About our Page</h2>
+        <p>Thetwopisceans has been curating travel content since 2019 and began partnering with hotels in 2023.</p>
+        <p>As of today, we have partnered with and visited over 50 hotels, villas and resorts. We've identified
+          characteristics on Instagram &amp; other social media platforms that drive maximum engagement and virality.
+        </p>
+        <p>With this skill set, we have rapidly grown our social media following and created high-engaging digital media
+          for our clients.</p>
+      </div>
+      <div class="about-page-right">
+        <img class="motorbike" src="mediakit/img-011.jpg" alt="Anantara sidecar motorcycle through rice fields" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CLIENT LOGOS ══════════════ -->
+  <section class="clients-section">
+    <h3>Current &amp; Previous Clients</h3>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="https://img.logo.dev/ritzcarlton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="The Ritz-Carlton"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/fourseasons.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Four Seasons"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/stregis.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="St. Regis"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/waldorfastoria.hilton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Waldorf Astoria"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/dior.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Christian Dior Parfums"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/w-hotels.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="W Hotels"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/soneva.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Soneva">
+      </div>
+      <div class="logo-item"><img src="https://img.logo.dev/jumeirah.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Jumeirah"></div>
+
+      <div class="logo-item"><img src="https://img.logo.dev/lhw.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Leading Hotels of the World"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/comohotels.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="COMO Hotels"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/mandarinoriental.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Mandarin Oriental"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/steigenberger.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Steigenberger"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/melia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Meliá">
+      </div>
+      <div class="logo-item"><img src="https://img.logo.dev/sixsenses.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Six Senses"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/theluxurycollection.marriott.com"
+          alt="The Luxury Collection"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/fairmont.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Fairmont"></div>
+
+      <div class="logo-item"><img src="https://img.logo.dev/ihg.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="IHG"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/hilton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hilton">
+      </div>
+      <div class="logo-item"><img src="https://img.logo.dev/corinthia.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Corinthia"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/barcelo.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Barceló">
+      </div>
+      <div class="logo-item"><img src="https://img.logo.dev/westin.marriott.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Westin"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/hotelbasilica.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Hotel Basilica" onerror="this.src='https://via.placeholder.com/150x50?text=Hotel+Basilica'"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/hyatt.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ" alt="Hyatt">
+      </div>
+      <div class="logo-item"><img src="https://img.logo.dev/sofitel.accor.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Sofitel"></div>
+      <div class="logo-item"><img src="https://img.logo.dev/sheraton.com?token=pk_DeISSLC5TTyuB-kq9a3IfQ"
+          alt="Sheraton Cairo"></div>
+      <div class="logo-item sindbad-logo">
+        <span class="text-logo">Sindbad Club<br><small>Hurghada</small></span>
+      </div>
+      <div class="logo-item almeyros-logo">
+        <span class="text-logo">Almeyros<br><small>Corfu</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ STATISTICS ══════════════ -->
+  <section class="stats-section">
+    <div class="stats-left">
+      <img src="mediakit/img-012.jpg" alt="Instagram analytics dashboard" />
+    </div>
+    <div class="stats-right">
+      <h2>Our Statistics</h2>
+
+      <div class="stats-numbers">
+        <div>
+          <div class="stat-number">800k</div>
+          <div class="stat-label">Monthly Reach</div>
+        </div>
+        <div>
+          <div class="stat-number">712k</div>
+          <div class="stat-label">Monthly Views</div>
+        </div>
+        <div>
+          <div class="stat-number">475k</div>
+          <div class="stat-label">Accounts Reached</div>
+        </div>
+        <div>
+          <div class="stat-number">7k</div>
+          <div class="stat-label">Monthly Web Visits</div>
+        </div>
+      </div>
+
+      <p>Our 700k – 800k monthly reach engages an affluent audience interested in stunning destinations, restaurants and
+        high-end accommodations.</p>
+      <p>Our website, driven by Instagram receives 6000–7000 monthly visits.</p>
+      <p>Together, our Instagram and website create a seamless brand experience, driving traffic, engagement, and
+        conversions in the medium to luxury travel niche.</p>
+      <p class="bold-note">We are also launching the blog soon which will curate all the best stays, food finds and
+        hidden gems from around the world.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ PREVIOUS PARTNERSHIPS ══════════════ -->
+  <section class="partnerships-hero">
+    <img src="mediakit/img-015.jpg" alt="EPIC hotel pool — previous partnerships" />
+    <div class="partnerships-hero-caption">
+      <h3>Previous Partnerships</h3>
+    </div>
+  </section>
+
+  <!-- ══════════════ PARTNERSHIPS PHOTO GRID ══════════════ -->
+  <section class="partnerships-grid">
+    <img src="mediakit/img-016.jpg" alt="Sunset ocean view from penthouse suite" />
+    <img src="mediakit/img-017.jpg" alt="Sweta Suman at luxury outdoor pool" />
+    <img src="mediakit/img-018.jpg" alt="Silhouette at indoor pool" />
+  </section>
+
+  <!-- ══════════════ OUR SOLUTIONS ══════════════ -->
+  <section class="solutions-section">
+    <div class="solutions-text">
+      <h2>Our Solutions</h2>
+
+      <div class="solution-item">
+        <h4>Design Social Media-Specific Digital Media for Hospitality Companies</h4>
+        <p>We create visually stunning, targeted content for luxury hotels, utilizing storytelling and interactive
+          elements to engage affluent travelers and enhance brand recognition.</p>
+      </div>
+
+      <div class="solution-item">
+        <h4>Distribute Media Through Our Audience on Instagram and Website</h4>
+        <p>We leverage our 800k – 1M monthly Instagram reach and website traffic to effectively distribute content,
+          driving engagement and bookings for hospitality brands.</p>
+      </div>
+    </div>
+    <div class="solutions-right">
+      <img src="mediakit/img-019.jpg" alt="Luxury hotel lobby with orb lighting" />
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTENT CREATION PACKAGE ══════════════ -->
+  <section style="background: var(--off-white);">
+    <div class="package-section">
+      <h2>Content Creation Package</h2>
+      <ul class="package-list">
+        <li>Instagram Stories</li>
+        <li>Instagram Carousel</li>
+        <li>Instagram Reel</li>
+        <li>High-Quality Photos (You receive full rights to use)</li>
+        <li>Blog Article and Highlight on our Website</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT CARD ══════════════ -->
+  <section class="contact-section">
+    <div class="contact-photos">
+      <img src="mediakit/img-021.jpg" alt="Luxury hotel suite bathroom" />
+      <img src="mediakit/img-020.jpg" alt="Artisanal iced coffee" />
+      <img src="mediakit/img-022.jpg" alt="Serene spa pool" />
+    </div>
+
+    <div class="contact-info">
+      <h2>Contact Card</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h4>Instagram</h4>
+          <a href="https://instagram.com/thetwopisceans" target="_blank" rel="noopener">@thetwopisceans</a>
+        </div>
+        <div class="contact-item">
+          <h4>Website</h4>
+          <a href="https://www.thetwopisceans.com" target="_blank" rel="noopener">www.thetwopisceans.com</a>
+        </div>
+        <div class="contact-item">
+          <h4>Email</h4>
+          <a href="mailto:thetwopisceans@gmail.com">thetwopisceans@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <h4>Phone Number</h4>
+          <p>+49 157 36705761</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 thetwopisceans — All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>
